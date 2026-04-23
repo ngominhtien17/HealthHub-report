@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthHub — Báo Cáo Phân Tích Thị Trường 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --white:       #ffffff;
+  --warm-white:  #f6f5f4;
+  --near-black:  rgba(0,0,0,0.95);
+  --warm-dark:   #31302e;
+  --gray-500:    #615d59;
+  --gray-300:    #a39e98;
+  --blue:        #0075de;
+  --blue-active: #005bab;
+  --badge-bg:    #f2f9ff;
+  --badge-text:  #097fe8;
+  --navy:        #213183;
+  --teal:        #2a9d99;
+  --orange:      #dd5b00;
+  --border:      1px solid rgba(0,0,0,0.1);
+  --shadow-card: rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2.025px 7.847px, rgba(0,0,0,0.02) 0px 0.8px 2.925px, rgba(0,0,0,0.01) 0px 0.175px 1.041px;
+  --shadow-deep: rgba(0,0,0,0.01) 0px 1px 3px, rgba(0,0,0,0.02) 0px 3px 7px, rgba(0,0,0,0.02) 0px 7px 15px, rgba(0,0,0,0.04) 0px 14px 28px, rgba(0,0,0,0.05) 0px 23px 52px;
+  --font: 'Inter', -apple-system, system-ui, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--font); background:var(--white); color:var(--near-black); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+/* NAV */
+nav { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.93); backdrop-filter:blur(12px); border-bottom:var(--border); height:56px; display:flex; align-items:center; padding:0 40px; gap:0; }
+.nav-logo { font-size:15px; font-weight:700; color:var(--near-black); letter-spacing:-0.25px; margin-right:28px; white-space:nowrap; display:flex; align-items:center; gap:7px; }
+.nav-dot { width:8px; height:8px; border-radius:50%; background:var(--blue); }
+.nav-links { display:flex; gap:2px; flex:1; }
+.nav-links a { font-size:14px; font-weight:500; color:var(--gray-500); text-decoration:none; padding:6px 10px; border-radius:5px; transition:color .15s, background .15s; white-space:nowrap; }
+.nav-links a:hover { color:var(--near-black); background:rgba(0,0,0,0.04); }
+.nav-links a.active { color:var(--blue); font-weight:600; }
+.nav-badge { background:var(--badge-bg); color:var(--badge-text); font-size:12px; font-weight:600; letter-spacing:.125px; padding:4px 10px; border-radius:9999px; border:var(--border); }
+
+/* HERO */
+.hero { max-width:1200px; margin:0 auto; padding:96px 40px 80px; }
+.eyebrow-pill { display:inline-flex; align-items:center; gap:8px; background:var(--badge-bg); color:var(--badge-text); font-size:12px; font-weight:600; letter-spacing:.125px; padding:4px 12px; border-radius:9999px; border:var(--border); margin-bottom:28px; }
+.eyebrow-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+h1.display { font-size:clamp(40px,5.5vw,64px); font-weight:700; line-height:1.0; letter-spacing:-2.125px; color:var(--near-black); font-feature-settings:"lnum","locl"; max-width:800px; }
+h1.display em { font-style:normal; color:var(--blue); }
+.hero-sub { margin-top:20px; font-size:18px; font-weight:400; line-height:1.6; color:var(--gray-500); max-width:560px; }
+.stat-row { margin-top:48px; display:flex; border:var(--border); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-card); max-width:760px; }
+.stat-cell { flex:1; padding:22px 24px; border-right:var(--border); }
+.stat-cell:last-child { border-right:none; }
+.stat-num { font-size:30px; font-weight:700; line-height:1; letter-spacing:-1px; font-feature-settings:"lnum"; }
+.stat-num em { font-style:normal; color:var(--blue); }
+.stat-lbl { margin-top:5px; font-size:13px; font-weight:400; color:var(--gray-500); line-height:1.4; }
+
+/* SECTIONS */
+.s-white { background:var(--white); }
+.s-warm  { background:var(--warm-white); }
+.inner { max-width:1200px; margin:0 auto; padding:72px 40px; }
+.inner-sm { max-width:1200px; margin:0 auto; padding:40px 40px; }
+hr { border:none; border-top:var(--border); }
+.s-label { font-size:12px; font-weight:600; letter-spacing:.125px; color:var(--blue); text-transform:uppercase; margin-bottom:8px; }
+h2.s-head { font-size:clamp(30px,3.2vw,48px); font-weight:700; line-height:1.0; letter-spacing:-1.5px; color:var(--near-black); font-feature-settings:"lnum","locl"; margin-bottom:10px; }
+.s-desc { font-size:16px; color:var(--gray-500); line-height:1.6; max-width:600px; margin-bottom:44px; }
+
+/* CARD */
+.card { background:var(--white); border:var(--border); border-radius:12px; box-shadow:var(--shadow-card); padding:24px; transition:box-shadow .2s, transform .2s; }
+.card:hover { box-shadow:var(--shadow-deep); transform:translateY(-2px); }
+.card-warm { background:var(--warm-white); box-shadow:none; border:var(--border); border-radius:12px; padding:24px; }
+.card-title { font-size:17px; font-weight:700; letter-spacing:-.25px; color:var(--near-black); margin-bottom:6px; }
+.card-body { font-size:14px; color:var(--gray-500); line-height:1.6; }
+
+/* BADGE */
+.badge { display:inline-flex; align-items:center; font-size:12px; font-weight:600; letter-spacing:.125px; padding:3px 10px; border-radius:9999px; }
+.b-blue   { background:var(--badge-bg); color:var(--badge-text); }
+.b-teal   { background:#eef8f8; color:var(--teal); }
+.b-green  { background:#edfbf0; color:#0e8a2b; }
+.b-orange { background:#fff3ec; color:var(--orange); }
+.b-gray   { background:var(--warm-white); color:var(--gray-500); border:var(--border); }
+.b-red    { background:#fff0f3; color:#c03a52; }
+
+/* MARKET */
+.market-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:20px; margin-bottom:32px; }
+.market-feature { background:var(--navy); border-radius:16px; padding:40px; color:#fff; box-shadow:var(--shadow-deep); }
+.market-feature .eyebrow { font-size:12px; font-weight:600; letter-spacing:.125px; color:#62aef0; text-transform:uppercase; margin-bottom:10px; }
+.market-feature .big-num { font-size:50px; font-weight:700; line-height:1; letter-spacing:-1.875px; color:#fff; font-feature-settings:"lnum"; margin-bottom:12px; }
+.market-feature .big-num span { font-size:20px; font-weight:500; color:rgba(255,255,255,.55); margin-left:4px; }
+.market-feature p { font-size:15px; color:rgba(255,255,255,.62); line-height:1.65; }
+.market-feature strong { color:#fff; font-weight:600; }
+.market-minis { display:flex; flex-direction:column; gap:14px; }
+.mini-card { background:var(--white); border:var(--border); border-radius:12px; padding:18px 22px; box-shadow:var(--shadow-card); display:flex; align-items:center; gap:14px; }
+.mini-icon { width:38px; height:38px; border-radius:8px; background:var(--warm-white); display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+.mini-num { font-size:21px; font-weight:700; letter-spacing:-.625px; color:var(--near-black); line-height:1; }
+.mini-desc { font-size:13px; color:var(--gray-500); line-height:1.4; margin-top:2px; }
+
+/* CAGR */
+.cagr-wrap { margin-top:36px; }
+.cagr-title-row { font-size:14px; font-weight:600; color:var(--near-black); margin-bottom:20px; }
+.cagr-row { display:flex; align-items:center; gap:14px; margin-bottom:13px; }
+.cagr-name { font-size:14px; color:var(--gray-500); min-width:160px; }
+.cagr-track { flex:1; height:6px; background:rgba(0,0,0,.07); border-radius:9999px; overflow:hidden; }
+.cagr-fill { height:100%; border-radius:9999px; transition:width 1.2s cubic-bezier(.16,1,.3,1); }
+.cagr-pct { font-size:14px; font-weight:600; width:42px; text-align:right; }
+
+/* TABLE */
+.data-table { width:100%; border-collapse:collapse; }
+.data-table thead th { font-size:12px; font-weight:600; letter-spacing:.125px; color:var(--gray-300); text-transform:uppercase; text-align:left; padding:12px 16px; border-bottom:var(--border); }
+.data-table tbody td { padding:13px 16px; font-size:14px; border-bottom:var(--border); vertical-align:middle; }
+.data-table tbody tr:last-child td { border-bottom:none; }
+.data-table tbody tr:hover td { background:rgba(0,0,0,.02); }
+.col-name { font-weight:600; color:var(--near-black); }
+.col-muted { color:var(--gray-500); }
+
+/* JOURNEY */
+.journey-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.j-phase { font-size:14px; font-weight:600; padding:13px 18px; border-radius:8px 8px 0 0; display:flex; align-items:center; gap:8px; border:var(--border); border-bottom:none; }
+.j-before { background:#fff8ec; color:var(--orange); }
+.j-during { background:#fff0f3; color:#c03a52; }
+.j-after  { background:#eef8f8; color:var(--teal); }
+.j-body { border:var(--border); border-top:none; border-radius:0 0 8px 8px; background:var(--white); }
+.j-item { padding:11px 18px; font-size:14px; color:var(--near-black); line-height:1.55; border-bottom:var(--border); display:flex; gap:9px; align-items:flex-start; }
+.j-item:last-child { border-bottom:none; }
+.j-item::before { content:'–'; color:var(--gray-300); flex-shrink:0; margin-top:1px; }
+
+/* SEGMENT CARDS */
+.seg-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:44px; }
+.seg-card { background:var(--white); border:var(--border); border-radius:12px; overflow:hidden; box-shadow:var(--shadow-card); transition:box-shadow .2s, transform .2s; }
+.seg-card:hover { box-shadow:var(--shadow-deep); transform:translateY(-2px); }
+.seg-top { padding:20px 22px 18px; border-bottom:var(--border); display:flex; justify-content:space-between; align-items:flex-start; gap:10px; }
+.seg-name { font-size:17px; font-weight:700; letter-spacing:-.25px; color:var(--near-black); }
+.seg-age { font-size:13px; color:var(--gray-300); margin-top:3px; }
+.seg-body { padding:18px 22px; }
+.seg-row { display:flex; gap:10px; margin-bottom:9px; font-size:14px; }
+.seg-key { font-weight:600; color:var(--gray-500); min-width:70px; flex-shrink:0; }
+.seg-val { color:var(--near-black); line-height:1.55; }
+.seg-insight { margin-top:12px; padding:11px 13px; border-radius:7px; font-size:13px; font-weight:500; line-height:1.5; border-left:3px solid; }
+.sa .seg-insight { background:#eef8f8; border-color:var(--teal); color:#1e7572; }
+.sb .seg-insight { background:#fff8ec; border-color:var(--orange); color:#9a3e00; }
+.sc .seg-insight { background:#fff0f3; border-color:#e05070; color:#8a1a30; }
+.sd .seg-insight { background:var(--badge-bg); border-color:var(--blue); color:#004da0; }
+
+/* TABS */
+.tab-bar { display:flex; gap:2px; border-bottom:var(--border); margin-bottom:28px; }
+.tab-btn { font-size:14px; font-weight:500; color:var(--gray-500); background:transparent; border:none; cursor:pointer; padding:9px 14px; border-radius:5px 5px 0 0; border-bottom:2px solid transparent; transition:color .15s; white-space:nowrap; margin-bottom:-1px; }
+.tab-btn:hover { color:var(--near-black); }
+.tab-btn.active { color:var(--blue); border-bottom-color:var(--blue); font-weight:600; }
+.tab-panel { display:none; }
+.tab-panel.active { display:block; }
+
+/* COMP CARDS */
+.comp-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+.comp-card { background:var(--white); border:var(--border); border-radius:12px; padding:22px; box-shadow:var(--shadow-card); }
+.comp-card:hover { box-shadow:var(--shadow-deep); }
+.comp-name { font-size:15px; font-weight:700; color:var(--near-black); margin-bottom:12px; display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+.comp-row { display:flex; gap:8px; margin-bottom:7px; font-size:14px; }
+.comp-key { font-weight:600; color:var(--gray-500); min-width:78px; flex-shrink:0; }
+.comp-val { color:var(--near-black); line-height:1.5; }
+.comp-note { margin-top:14px; padding:13px 15px; background:var(--warm-white); border-radius:8px; border:var(--border); font-size:14px; color:var(--gray-500); line-height:1.6; }
+.level-dots { display:inline-flex; gap:4px; align-items:center; }
+.ld { width:7px; height:7px; border-radius:50%; background:rgba(0,0,0,.12); }
+.ld.hi { background:#c03a52; } .ld.mi { background:var(--orange); } .ld.lo { background:var(--teal); }
+
+/* FEATURE TIERS */
+.feat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.feat-tier { border-radius:12px; overflow:hidden; border:var(--border); box-shadow:var(--shadow-card); background:var(--white); }
+.feat-head { padding:18px 22px; border-bottom:var(--border); }
+.feat-head-title { font-size:13px; font-weight:700; letter-spacing:.125px; text-transform:uppercase; margin-bottom:4px; }
+.feat-head-sub { font-size:13px; color:var(--gray-500); line-height:1.4; }
+.t-must .feat-head { background:#fff0f3; } .t-must .feat-head-title { color:#c03a52; }
+.t-diff .feat-head { background:#fff8ec; } .t-diff .feat-head-title { color:var(--orange); }
+.t-edge .feat-head { background:#eef8f8; } .t-edge .feat-head-title { color:var(--teal); }
+.feat-list { padding:6px 0 10px; }
+.feat-item { padding:10px 22px; font-size:14px; color:var(--near-black); line-height:1.5; border-bottom:var(--border); display:flex; gap:10px; }
+.feat-item:last-child { border-bottom:none; }
+
+/* SWOT */
+.swot-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:52px; }
+.swot-cell { border:var(--border); border-radius:12px; padding:24px; background:var(--white); box-shadow:var(--shadow-card); }
+.swot-head { font-size:15px; font-weight:700; letter-spacing:-.25px; margin-bottom:14px; }
+.sw-s .swot-head { color:var(--teal); } .sw-w .swot-head { color:var(--orange); } .sw-o .swot-head { color:var(--blue); } .sw-t .swot-head { color:#c03a52; }
+.swot-item { font-size:14px; line-height:1.55; color:var(--near-black); display:flex; gap:8px; margin-bottom:7px; }
+.swot-item:last-child { margin-bottom:0; }
+.swot-item::before { content:'→'; color:var(--gray-300); flex-shrink:0; }
+
+/* OPP */
+.opp-list { display:flex; flex-direction:column; gap:10px; }
+.opp-item { background:var(--white); border:var(--border); border-radius:12px; padding:22px 26px; box-shadow:var(--shadow-card); display:grid; grid-template-columns:44px 1fr auto; gap:18px; align-items:start; transition:box-shadow .2s, transform .2s; }
+.opp-item:hover { box-shadow:var(--shadow-deep); transform:translateX(4px); }
+.opp-num { font-size:32px; font-weight:700; line-height:1; letter-spacing:-1px; color:var(--gray-300); font-feature-settings:"lnum"; }
+.opp-title { font-size:17px; font-weight:700; letter-spacing:-.25px; color:var(--near-black); margin-bottom:5px; }
+.opp-desc { font-size:14px; color:var(--gray-500); line-height:1.6; }
+
+/* ROADMAP */
+.rm-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; position:relative; }
+.rm-line { position:absolute; top:27px; left:calc(16.67% + 9px); right:calc(16.67% + 9px); height:2px; background:linear-gradient(90deg, var(--teal), var(--orange)); z-index:0; }
+.rm-phase { position:relative; z-index:1; }
+.rm-dot { width:14px; height:14px; border-radius:50%; border:3px solid var(--white); margin:20px auto 22px; box-shadow:0 0 0 2px; }
+.rp1 .rm-dot { background:var(--teal); box-shadow:0 0 0 2px var(--teal); }
+.rp2 .rm-dot { background:var(--orange); box-shadow:0 0 0 2px var(--orange); }
+.rp3 .rm-dot { background:#c03a52; box-shadow:0 0 0 2px #c03a52; }
+.rm-card { background:var(--white); border:var(--border); border-radius:12px; box-shadow:var(--shadow-card); overflow:hidden; }
+.rm-head { padding:14px 18px; border-bottom:var(--border); }
+.rm-period { font-size:12px; font-weight:600; letter-spacing:.125px; text-transform:uppercase; margin-bottom:3px; }
+.rp1 .rm-period { color:var(--teal); } .rp2 .rm-period { color:var(--orange); } .rp3 .rm-period { color:#c03a52; }
+.rm-title { font-size:17px; font-weight:700; letter-spacing:-.25px; color:var(--near-black); }
+.rm-body { padding:4px 0 10px; }
+.rm-feat { padding:9px 18px; font-size:14px; color:var(--near-black); line-height:1.5; border-bottom:var(--border); display:flex; gap:9px; }
+.rm-feat:last-child { border-bottom:none; }
+.rm-fdot { width:5px; height:5px; border-radius:50%; background:var(--gray-300); flex-shrink:0; margin-top:7px; }
+.rp1 .rm-fdot { background:var(--teal); } .rp2 .rm-fdot { background:var(--orange); } .rp3 .rm-fdot { background:#c03a52; }
+.rm-kpi { margin:10px 18px 4px; padding:11px 13px; background:var(--warm-white); border-radius:7px; border:var(--border); }
+.rm-kpi-label { font-size:11px; font-weight:600; letter-spacing:.125px; text-transform:uppercase; margin-bottom:3px; }
+.rp1 .rm-kpi-label { color:var(--teal); } .rp2 .rm-kpi-label { color:var(--orange); } .rp3 .rm-kpi-label { color:#c03a52; }
+.rm-kpi-val { font-size:13px; color:var(--gray-500); line-height:1.4; }
+
+/* PRINCIPLES */
+.principle-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:40px; }
+.p-card { border:var(--border); border-radius:12px; padding:26px; background:var(--white); box-shadow:var(--shadow-card); }
+.p-icon { font-size:22px; margin-bottom:12px; }
+.p-title { font-size:16px; font-weight:700; letter-spacing:-.25px; color:var(--near-black); margin-bottom:7px; }
+.p-desc { font-size:14px; color:var(--gray-500); line-height:1.6; }
+
+footer { border-top:var(--border); background:var(--white); padding:36px 40px; text-align:center; }
+footer p { font-size:13px; color:var(--gray-300); line-height:1.8; }
+footer strong { color:var(--gray-500); font-weight:600; }
+
+/* TOOLTIP */
+.term {
+  border-bottom: 1.5px dashed var(--blue);
+  cursor: help;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  display: inline;
+}
+.term:hover { color: var(--blue); }
+.tooltip-box {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  background: var(--near-black);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  padding: 10px 14px;
+  border-radius: 9px;
+  max-width: 280px;
+  pointer-events: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.22);
+  letter-spacing: 0;
+}
+.tooltip-box strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: #62aef0;
+  margin-bottom: 4px;
+}
+.tooltip-box.visible { display: block; }
+
+/* GLOSSARY SECTION */
+.glossary-section { background: var(--warm-white); }
+.glossary-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; margin-top: 32px; }
+.glossary-item { background: var(--white); border: var(--border); border-radius: 10px; padding: 16px 20px; box-shadow: var(--shadow-card); }
+.glossary-abbr { font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: .5px; text-transform: uppercase; margin-bottom: 2px; }
+.glossary-name { font-size: 15px; font-weight: 600; color: var(--near-black); margin-bottom: 6px; }
+.glossary-def { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+.fade-in { opacity:0; transform:translateY(14px); transition:opacity .45s ease, transform .45s ease; }
+.fade-in.visible { opacity:1; transform:none; }
+
+@media (max-width:768px) {
+  nav { padding:0 16px; } .nav-links { display:none; }
+  .hero { padding:56px 16px 44px; } .inner { padding:48px 16px; } .inner-sm { padding:32px 16px; }
+  .stat-row { flex-direction:column; } .stat-cell { border-right:none; border-bottom:var(--border); }
+  .market-grid, .journey-grid, .seg-grid, .comp-grid, .feat-grid, .swot-grid, .rm-grid, .principle-grid { grid-template-columns:1fr; }
+  .rm-line { display:none; }
+  .opp-item { grid-template-columns:38px 1fr; } .opp-item > .badge { display:none; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><div class="nav-dot"></div>HealthHub</div>
+  <div class="nav-links">
+    <a href="#market">Thị trường</a>
+    <a href="#users">Người dùng</a>
+    <a href="#competition">Cạnh tranh</a>
+    <a href="#features">Tính năng</a>
+    <a href="#opportunities">Cơ hội</a>
+    <a href="#roadmap">Lộ trình</a>
+    <a href="#glossary">Phụ lục</a>
+  </div>
+  <span class="nav-badge">2025 – Q1/2026</span>
+</nav>
+
+<!-- HERO -->
+<section class="s-white">
+  <div class="hero fade-in">
+    <div class="eyebrow-pill"><span class="eyebrow-dot"></span>Báo cáo phân tích thị trường</div>
+    <h1 class="display">Hệ sinh thái y tế số<br><em>HealthHub</em></h1>
+    <p class="hero-sub">Phân tích chiến lược toàn diện cho bệnh viện tư tại Việt Nam — từ quy mô thị trường, nhu cầu người dùng đến lộ trình sản phẩm thực tiễn.</p>
+    <div class="stat-row">
+      <div class="stat-cell"><div class="stat-num"><em>2,84</em> tỷ</div><div class="stat-lbl">USD · Quy mô thị trường 2025</div></div>
+      <div class="stat-cell"><div class="stat-num">14,4%</div><div class="stat-lbl">CAGR · Tốc độ tăng trưởng kép</div></div>
+      <div class="stat-cell"><div class="stat-num">84%</div><div class="stat-lbl">Dân số sở hữu smartphone</div></div>
+      <div class="stat-cell"><div class="stat-num">46%</div><div class="stat-lbl">Thị phần thuộc miền Nam</div></div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<!-- SECTION 1: MARKET -->
+<section class="s-white" id="market">
+  <div class="inner">
+    <div class="s-label">01 · Tổng quan</div>
+    <h2 class="s-head">Quy mô & Tốc độ tăng trưởng</h2>
+    <p class="s-desc">Thị trường đang ở giai đoạn tăng trưởng sớm — thời điểm lý tưởng để xây dựng hệ sinh thái riêng trước khi thói quen người dùng bị khoá chặt.</p>
+    <div class="market-grid fade-in">
+      <div class="market-feature">
+        <div class="eyebrow">Tổng thị trường Y tế Số · 2025</div>
+        <div class="big-num">$2,84<span>tỷ USD</span></div>
+        <p>Dự kiến đạt <strong>$9,52 tỷ USD</strong> vào 2034 — tăng 3,35 lần. Miền Nam (TP.HCM) chiếm <strong>46%</strong> toàn thị trường. Phần mềm HIS/EMR/AI chiếm <strong>57%</strong> thị phần.</p>
+      </div>
+      <div class="market-minis">
+        <div class="mini-card fade-in"><div class="mini-icon">📡</div><div><div class="mini-num">$460M</div><div class="mini-desc">Telehealth 2024 · CAGR 19,2% → $2,7 tỷ vào 2033</div></div></div>
+        <div class="mini-card fade-in"><div class="mini-icon">💰</div><div><div class="mini-num">$1,26B</div><div class="mini-desc">Ngân sách Nhà nước đầu tư số hoá y tế đến 2025</div></div></div>
+        <div class="mini-card fade-in"><div class="mini-icon">🆔</div><div><div class="mini-num">14,6M</div><div class="mini-desc">Tài khoản VNeID đã tích hợp hồ sơ sức khoẻ điện tử</div></div></div>
+      </div>
+    </div>
+    <div class="cagr-wrap fade-in">
+      <div class="cagr-title-row">So sánh tốc độ tăng trưởng theo phân khúc (CAGR)</div>
+      <div class="cagr-row"><span class="cagr-name">Telehealth</span><div class="cagr-track"><div class="cagr-fill" data-w="84" style="width:0%;background:#2a9d99"></div></div><span class="cagr-pct" style="color:#2a9d99">19,2%</span></div>
+      <div class="cagr-row"><span class="cagr-name">eHealth tổng thể</span><div class="cagr-track"><div class="cagr-fill" data-w="68" style="width:0%;background:#0075de"></div></div><span class="cagr-pct" style="color:#0075de">15,5%</span></div>
+      <div class="cagr-row"><span class="cagr-name">Y tế số tổng thể</span><div class="cagr-track"><div class="cagr-fill" data-w="63" style="width:0%;background:#dd5b00"></div></div><span class="cagr-pct" style="color:#dd5b00">14,4%</span></div>
+      <div class="cagr-row"><span class="cagr-name">Ứng dụng sức khoẻ</span><div class="cagr-track"><div class="cagr-fill" data-w="43" style="width:0%;background:#a39e98"></div></div><span class="cagr-pct" style="color:#a39e98">9,8%</span></div>
+    </div>
+  </div>
+</section>
+<hr>
+<section class="s-warm">
+  <div class="inner-sm">
+    <div style="font-size:14px;font-weight:600;color:var(--near-black);margin-bottom:16px">Bảng phân tích phân khúc thị trường</div>
+    <div style="border:var(--border);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-card);background:var(--white)">
+      <table class="data-table">
+        <thead><tr><th>Phân khúc</th><th>Tình trạng 2025</th><th>Cơ hội cho bệnh viện tư</th></tr></thead>
+        <tbody>
+          <tr><td class="col-name">Telehealth</td><td class="col-muted">Tăng trưởng mạnh · 28% thị phần</td><td><span class="badge b-teal">Cao — tư vấn nội bộ</span></td></tr>
+          <tr><td class="col-name">HIS (Hệ thống thông tin)</td><td class="col-muted">Bắt buộc · Hầu hết đã triển khai</td><td><span class="badge b-gray">Nền tảng tích hợp</span></td></tr>
+          <tr><td class="col-name">EMR / EHR</td><td class="col-muted">Bắt buộc 2025–2026</td><td><span class="badge b-teal">Cơ hội sở hữu dữ liệu</span></td></tr>
+          <tr><td class="col-name">⭐ Ứng dụng bệnh nhân (mHealth)</td><td class="col-muted">Phân mảnh · Chưa có chuẩn</td><td><span class="badge b-blue" style="font-size:13px;padding:4px 12px">Cơ hội lớn nhất</span></td></tr>
+          <tr><td class="col-name">AI Chẩn đoán</td><td class="col-muted">Mới nổi · Ít nơi làm tốt</td><td><span class="badge b-orange">Lợi thế dài hạn</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<hr>
+
+<!-- SECTION 2: USERS -->
+<section class="s-white" id="users">
+  <div class="inner">
+    <div class="s-label">02 · Nhu cầu thị trường</div>
+    <h2 class="s-head">Pain point & Phân khúc người dùng</h2>
+    <p class="s-desc">Hành trình bệnh nhân bị đứt gãy ở cả ba giai đoạn — đây là nền tảng để xác định ưu tiên tính năng.</p>
+    <div class="journey-grid fade-in">
+      <div><div class="j-phase j-before">⏰ Trước khi đến viện</div><div class="j-body"><div class="j-item">Không biết khám bác sĩ nào phù hợp với triệu chứng</div><div class="j-item">Đặt lịch qua điện thoại / Zalo — không có xác nhận tự động</div><div class="j-item">Phải kể lại bệnh sử từ đầu mỗi lần đến viện mới</div><div class="j-item">Không rõ chi phí dự kiến trước khi đến khám</div></div></div>
+      <div><div class="j-phase j-during">🏥 Trong khi khám</div><div class="j-body"><div class="j-item">Chờ đợi lâu, không biết đang xếp hàng thứ mấy</div><div class="j-item">Giấy tờ thủ công, điền lại nhiều lần</div><div class="j-item">Bác sĩ không có đủ lịch sử bệnh án để tham chiếu</div><div class="j-item">Thanh toán tiền mặt, xếp hàng thanh toán cuối buổi</div></div></div>
+      <div><div class="j-phase j-after">📋 Sau khi khám</div><div class="j-body"><div class="j-item">Mất kết quả xét nghiệm, đơn thuốc in giấy thất lạc</div><div class="j-item">Không có nhắc nhở uống thuốc / lịch tái khám</div><div class="j-item">Không thể hỏi bác sĩ về kết quả bất thường</div><div class="j-item">Không theo dõi được diễn tiến bệnh mãn tính</div></div></div>
+    </div>
+    <div class="seg-grid">
+      <div class="seg-card sa fade-in">
+        <div class="seg-top"><div><div class="seg-name">Tầng lớp trung lưu đô thị</div><div class="seg-age">25–45 tuổi · Bệnh cấp tính</div></div><span class="badge b-teal">Người dùng cốt lõi</span></div>
+        <div class="seg-body">
+          <div class="seg-row"><span class="seg-key">Hành vi</span><span class="seg-val">Smartphone-first, dùng Zalo/Facebook hàng ngày, quen đặt dịch vụ online</span></div>
+          <div class="seg-row"><span class="seg-key">Lý do</span><span class="seg-val">Chất lượng, tốc độ phục vụ, không quá tải như bệnh viện công</span></div>
+          <div class="seg-row"><span class="seg-key">Pain point</span><span class="seg-val">Muốn tiết kiệm thời gian tối đa</span></div>
+          <div class="seg-insight">✓ Mức độ chấp nhận công nghệ cao — sẵn sàng dùng ứng dụng nếu trải nghiệm đủ tốt ngay lần đầu</div>
+        </div>
+      </div>
+      <div class="seg-card sb fade-in">
+        <div class="seg-top"><div><div class="seg-name">Bệnh nhân mãn tính</div><div class="seg-age">40–65 tuổi · Tái khám định kỳ</div></div><span class="badge b-orange">⭐ LTV cao nhất</span></div>
+        <div class="seg-body">
+          <div class="seg-row"><span class="seg-key">Bệnh</span><span class="seg-val">Tiểu đường, tăng huyết áp, tim mạch — khám hàng tháng</span></div>
+          <div class="seg-row"><span class="seg-key">Quy mô</span><span class="seg-val">NCD chiếm 77% gánh nặng bệnh tật; 86% chưa được theo dõi liên tục</span></div>
+          <div class="seg-insight">★ Nếu giữ được sự trung thành, đây là nguồn doanh thu cốt lõi và ổn định nhất</div>
+        </div>
+      </div>
+      <div class="seg-card sc fade-in">
+        <div class="seg-top"><div><div class="seg-name">Gia đình & Bà mẹ trẻ</div><div class="seg-age">28–40 tuổi · Nhi khoa / Sản phụ</div></div><span class="badge b-red">Động lực thu hút</span></div>
+        <div class="seg-body">
+          <div class="seg-row"><span class="seg-key">Nhu cầu</span><span class="seg-val">Nhi khoa, tiêm chủng, sản phụ khoa — tần suất cao</span></div>
+          <div class="seg-row"><span class="seg-key">Đặc biệt</span><span class="seg-val">Thường là người quyết định chọn bệnh viện cho cả hộ gia đình</span></div>
+          <div class="seg-insight">→ Kéo cả gia đình vào hệ sinh thái qua tính năng quản lý sức khoẻ gia đình</div>
+        </div>
+      </div>
+      <div class="seg-card sd fade-in">
+        <div class="seg-top"><div><div class="seg-name">Người nước ngoài & Việt kiều</div><div class="seg-age">Mọi độ tuổi · Khám tổng quát</div></div><span class="badge b-blue">Phân khúc cao cấp</span></div>
+        <div class="seg-body">
+          <div class="seg-row"><span class="seg-key">Yêu cầu</span><span class="seg-val">Hỗ trợ tiếng Anh, hồ sơ y tế minh bạch, quy trình rõ ràng</span></div>
+          <div class="seg-row"><span class="seg-key">Lợi thế</span><span class="seg-val">Sẵn sàng chi trả cao hơn cho trải nghiệm dịch vụ xuất sắc</span></div>
+          <div class="seg-insight">→ Đầu tư vào giao diện đa ngôn ngữ và hồ sơ y tế xuất nhập khẩu được</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<!-- SECTION 3: COMPETITION -->
+<section class="s-warm" id="competition">
+  <div class="inner">
+    <div class="s-label">03 · Cạnh tranh</div>
+    <h2 class="s-head">Bức tranh đối thủ thị trường</h2>
+    <p class="s-desc">Thị trường chưa bão hoà ở phân khúc ứng dụng thuộc sở hữu bệnh viện. Khoảng trắng vẫn còn lớn, đặc biệt ở bệnh viện tư quy mô trung bình.</p>
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showTab('marketplace',this)">Ứng dụng đa bệnh viện</button>
+      <button class="tab-btn" onclick="showTab('hospital',this)">Bệnh viện sở hữu app</button>
+      <button class="tab-btn" onclick="showTab('his',this)">Nhà cung cấp HIS / EMR</button>
+    </div>
+    <div id="tab-marketplace" class="tab-panel active">
+      <div class="comp-grid">
+        <div class="comp-card fade-in"><div class="comp-name">🏆 Jio Health <span class="badge b-blue">Dẫn đầu</span></div><div class="comp-row"><span class="comp-key">Điểm mạnh</span><span class="comp-val">Đặt lịch + khám tại nhà + tư vấn từ xa tích hợp; thương hiệu tin cậy lâu năm</span></div><div class="comp-row"><span class="comp-key">Điểm yếu</span><span class="comp-val">Mô hình đa bệnh viện — không sở hữu dữ liệu riêng của từng bệnh viện</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld mi"></span><span class="ld mi"></span><span class="ld"></span></span> <span style="font-size:13px;color:var(--gray-500)">Trung bình — khác mô hình</span></span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">🌏 Doctor Anywhere</div><div class="comp-row"><span class="comp-key">Điểm mạnh</span><span class="comp-val">Gốc Singapore, tư vấn từ xa 24/7, đã hiện diện tại Việt Nam</span></div><div class="comp-row"><span class="comp-key">Điểm yếu</span><span class="comp-val">Không tích hợp sâu với hệ thống nội bộ bệnh viện (HIS)</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld mi"></span><span class="ld mi"></span><span class="ld"></span></span> <span style="font-size:13px;color:var(--gray-500)">Trung bình</span></span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">💊 Medigo</div><div class="comp-row"><span class="comp-key">Điểm mạnh</span><span class="comp-val">Giao thuốc trong 20 phút, hơn 1.000 nhà thuốc đối tác 24/7</span></div><div class="comp-row"><span class="comp-key">Điểm yếu</span><span class="comp-val">Tập trung vào phân phối thuốc, không phải hành trình khám bệnh</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld lo"></span><span class="ld"></span><span class="ld"></span></span> <span style="font-size:13px;color:var(--gray-500)">Thấp — khác phân khúc</span></span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">📱 eDoctor / WeDo Pulse</div><div class="comp-row"><span class="comp-key">Điểm mạnh</span><span class="comp-val">Tư vấn y tế từ xa, chi phí thấp</span></div><div class="comp-row"><span class="comp-key">Điểm yếu</span><span class="comp-val">Ít tên tuổi, trải nghiệm người dùng còn yếu</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld lo"></span><span class="ld"></span><span class="ld"></span></span> <span style="font-size:13px;color:var(--gray-500)">Thấp</span></span></div></div>
+      </div>
+      <div class="comp-note"><strong>Nhận định:</strong> Có khoảng 293 startup y tế số tại Việt Nam nhưng chỉ 28 đơn vị có vốn đầu tư và 8 đạt Series A trở lên. Đây không phải đối thủ trực tiếp vì mô hình marketplace khác hoàn toàn với hệ sinh thái thuộc sở hữu bệnh viện.</div>
+    </div>
+    <div id="tab-hospital" class="tab-panel">
+      <div class="comp-grid">
+        <div class="comp-card fade-in" style="border-color:rgba(0,117,222,.25)"><div class="comp-name">⭐ Vinmec <span class="badge b-blue">Chuẩn mực cao nhất</span></div><div class="comp-row"><span class="comp-key">Điểm mạnh</span><span class="comp-val">Nền tảng Dữ liệu Vinmec, AI chẩn đoán, đạt tiêu chuẩn JCI, kết nối Cleveland Clinic</span></div><div class="comp-row"><span class="comp-key">Chiến lược</span><span class="comp-val">"Chăm sóc trọn đời" — tích hợp toàn bộ hành trình từ khám đến phục hồi</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld hi"></span><span class="ld hi"></span><span class="ld hi"></span></span> <span style="font-size:13px;color:var(--gray-500)">Cao — benchmark thị trường</span></span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">🏨 FV Hospital</div><div class="comp-row"><span class="comp-key">Điểm mạnh</span><span class="comp-val">Ứng dụng đặt lịch cơ bản, hỗ trợ tiếng Anh tốt cho expat</span></div><div class="comp-row"><span class="comp-key">Hạn chế</span><span class="comp-val">Chưa có hệ sinh thái đầy đủ, thiếu tính năng gắn kết sau khám</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld mi"></span><span class="ld mi"></span><span class="ld"></span></span> <span style="font-size:13px;color:var(--gray-500)">Trung bình</span></span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">🔬 Tâm Anh / Medlatec</div><div class="comp-row"><span class="comp-key">Điểm mạnh</span><span class="comp-val">Đặt lịch trực tuyến, trả kết quả xét nghiệm qua ứng dụng</span></div><div class="comp-row"><span class="comp-key">Hạn chế</span><span class="comp-val">Tính năng còn hạn chế, chưa có vòng lặp gắn kết sau khám</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld mi"></span><span class="ld mi"></span><span class="ld"></span></span> <span style="font-size:13px;color:var(--gray-500)">Trung bình</span></span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">🏪 Bệnh viện tư vừa–nhỏ</div><div class="comp-row"><span class="comp-key">Thực trạng</span><span class="comp-val">Chủ yếu dùng Zalo hoặc tổng đài điện thoại để đặt lịch</span></div><div class="comp-row"><span class="comp-key">Cơ hội</span><span class="comp-val">Khoảng trắng lớn — ai xây dựng trước sẽ có lợi thế người đi trước</span></div><div class="comp-row"><span class="comp-key">Mức đe doạ</span><span class="comp-val"><span class="level-dots"><span class="ld lo"></span><span class="ld"></span><span class="ld"></span></span> <span style="font-size:13px;color:var(--gray-500)">Thấp hiện tại</span></span></div></div>
+      </div>
+    </div>
+    <div id="tab-his" class="tab-panel">
+      <div class="comp-grid">
+        <div class="comp-card fade-in"><div class="comp-name">🖥 FPT.eHospital</div><div class="comp-row"><span class="comp-key">Sản phẩm</span><span class="comp-val">22 phân hệ chức năng — HIS toàn diện nhất thị trường</span></div><div class="comp-row"><span class="comp-key">Lưu ý</span><span class="comp-val">API hạn chế, khó tích hợp real-time với ứng dụng bệnh nhân</span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">📶 Viettel Healthcare</div><div class="comp-row"><span class="comp-key">Sản phẩm</span><span class="comp-val">HIS + nền tảng tư vấn từ xa tích hợp, được nhà nước hỗ trợ mạnh</span></div><div class="comp-row"><span class="comp-key">Lưu ý</span><span class="comp-val">Thiên về hệ thống công, ít linh hoạt cho bệnh viện tư</span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">🤖 VinBrain (VinGroup)</div><div class="comp-row"><span class="comp-key">Sản phẩm</span><span class="comp-val">AI chẩn đoán, nền tảng DrAid — xử lý hình ảnh y tế</span></div><div class="comp-row"><span class="comp-key">Lưu ý</span><span class="comp-val">Tăng trưởng mạnh 2025 — có thể trở thành đối tác hoặc đối thủ</span></div></div>
+        <div class="comp-card fade-in"><div class="comp-name">🏛 VNPT Health</div><div class="comp-row"><span class="comp-key">Sản phẩm</span><span class="comp-val">Kết nối bệnh viện với Bảo hiểm Xã hội — 99,5% bệnh viện dùng</span></div><div class="comp-row"><span class="comp-key">Lưu ý</span><span class="comp-val">Quan trọng cho tích hợp bảo hiểm — phải kết nối bắt buộc</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<!-- SECTION 4: FEATURES -->
+<section class="s-white" id="features">
+  <div class="inner">
+    <div class="s-label">04 · Sản phẩm & Tính năng</div>
+    <h2 class="s-head">Bản đồ tính năng theo mức kỳ vọng</h2>
+    <p class="s-desc">Ba tầng tính năng với mức độ ưu tiên khác nhau — từ điều kiện bắt buộc đến lợi thế cạnh tranh dài hạn.</p>
+    <div class="feat-grid">
+      <div class="feat-tier t-must fade-in"><div class="feat-head"><div class="feat-head-title">🔴 Tiêu chuẩn tối thiểu</div><div class="feat-head-sub">Không có là thua ngay từ đầu</div></div><div class="feat-list"><div class="feat-item"><span>📅</span> Đặt lịch trực tuyến và xác nhận tự động</div><div class="feat-item"><span>🔢</span> Số thứ tự điện tử / hàng chờ ảo</div><div class="feat-item"><span>🧪</span> Trả kết quả xét nghiệm qua ứng dụng</div><div class="feat-item"><span>💳</span> Thanh toán điện tử (QR, ví điện tử)</div></div></div>
+      <div class="feat-tier t-diff fade-in"><div class="feat-head"><div class="feat-head-title">🟡 Tính năng tạo lợi thế</div><div class="feat-head-sub">Tạo sự ưu tiên khi so sánh</div></div><div class="feat-list"><div class="feat-item"><span>📡</span> Tư vấn từ xa sau khám (Telehealth)</div><div class="feat-item"><span>📁</span> Hồ sơ bệnh án cá nhân hoá</div><div class="feat-item"><span>⏰</span> Nhắc nhở uống thuốc và tái khám</div><div class="feat-item"><span>💬</span> Nhắn tin với bác sĩ sau khám</div></div></div>
+      <div class="feat-tier t-edge fade-in"><div class="feat-head"><div class="feat-head-title">🟢 Tính năng tạo gắn bó</div><div class="feat-head-sub">Ít nơi làm được — tạo trung thành lâu dài</div></div><div class="feat-list"><div class="feat-item"><span>🗺</span> Lộ trình chăm sóc cá nhân hoá</div><div class="feat-item"><span>📊</span> Bảng theo dõi bệnh mãn tính</div><div class="feat-item"><span>🤖</span> Sàng lọc triệu chứng AI trước đặt lịch</div><div class="feat-item"><span>⌚</span> Kết nối thiết bị đeo tay</div><div class="feat-item"><span>👨‍👩‍👧</span> Quản lý sức khoẻ cả hộ gia đình</div></div></div>
+    </div>
+    <div style="margin-top:8px;padding:14px 18px;background:var(--warm-white);border-radius:8px;border:var(--border);font-size:14px;color:var(--gray-500);line-height:1.6">
+      Theo dữ liệu triển khai thực tế: <strong style="color:var(--near-black)">46,5%</strong> cơ sở y tế đã có đặt lịch online · <strong style="color:var(--near-black)">61,1%</strong> có số thứ tự điện tử · <strong style="color:var(--near-black)">71%</strong> áp dụng thanh toán điện tử · <strong style="color:var(--near-black)">99,5%</strong> kết nối HIS với Bảo hiểm Xã hội.
+    </div>
+    <!-- SWOT -->
+    <div style="margin-top:60px">
+      <div style="font-size:14px;font-weight:600;color:var(--near-black);margin-bottom:6px">Phân tích lợi thế & rủi ro khi xây dựng hệ sinh thái riêng</div>
+      <div style="font-size:14px;color:var(--gray-500);margin-bottom:22px">Xét theo góc nhìn kinh doanh, sản phẩm, trải nghiệm người dùng và công nghệ</div>
+      <div class="swot-grid">
+        <div class="swot-cell sw-s fade-in"><div class="swot-head">💪 Lợi thế</div><div class="swot-item">Toàn quyền kiểm soát dữ liệu bệnh nhân — tài sản chiến lược dài hạn</div><div class="swot-item">Không chia sẻ doanh thu với nền tảng trung gian</div><div class="swot-item">Vòng lặp trung thành khép kín: app → khám → app → tái khám</div><div class="swot-item">Tích hợp sâu với HIS/EMR nội bộ — trải nghiệm liền mạch hơn</div></div>
+        <div class="swot-cell sw-w fade-in"><div class="swot-head">⚠️ Bất lợi</div><div class="swot-item">Chi phí phát triển và vận hành cao hơn giải pháp SaaS sẵn có</div><div class="swot-item">Khó cạnh tranh về độ phong phú tính năng ban đầu</div><div class="swot-item">Rào cản tải về: người dùng khám ít lần mỗi năm</div><div class="swot-item">Phụ thuộc vào chất lượng dữ liệu từ HIS cũ</div></div>
+        <div class="swot-cell sw-o fade-in"><div class="swot-head">🎯 Cơ hội</div><div class="swot-item">Chính sách EHR bắt buộc 2025–2026 tạo làn sóng thuận chiều</div><div class="swot-item">86% bệnh nhân mãn tính chưa được theo dõi liên tục</div><div class="swot-item">Khoảng trắng lớn ở tính năng gắn kết sau khám</div><div class="swot-item">Tầng lớp trung lưu ngày càng ưa y tế tư nhân số hoá</div></div>
+        <div class="swot-cell sw-t fade-in"><div class="swot-head">🚨 Thách thức</div><div class="swot-item">7.000+ vụ vi phạm dữ liệu y tế → niềm tin người dùng thấp</div><div class="swot-item">Khung pháp lý số hoá y tế chưa hoàn chỉnh tại Việt Nam</div><div class="swot-item">Thói quen dùng Zalo tạo rào cản chuyển đổi thực sự</div><div class="swot-item">API từ HIS cũ hạn chế, chi phí tích hợp bị đánh giá thấp</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<!-- SECTION 5: OPPORTUNITIES -->
+<section class="s-warm" id="opportunities">
+  <div class="inner">
+    <div class="s-label">05 · Phân tích cơ hội</div>
+    <h2 class="s-head">5 khoảng trắng chưa ai khai thác tốt</h2>
+    <p class="s-desc">Các cơ hội được xếp hạng theo mức độ tác động đến doanh thu và khả năng thực thi trong ngắn hạn.</p>
+    <div class="opp-list">
+      <div class="opp-item fade-in"><div class="opp-num">01</div><div><div class="opp-title">Vòng lặp gắn kết sau khám</div><div class="opp-desc">Không có ứng dụng nào tại Việt Nam đang làm tốt phần theo dõi sau điều trị. Nhắc nhở dùng thuốc, kết quả trực tuyến, hỏi bác sĩ sau khám — tất cả đang bị bỏ ngỏ hoàn toàn. Mỗi lần bệnh nhân quay lại tái khám là thêm một lần doanh thu trực tiếp.</div></div><span class="badge b-teal">⭐ Ưu tiên #1</span></div>
+      <div class="opp-item fade-in"><div class="opp-num">02</div><div><div class="opp-title">Nền tảng quản lý bệnh mãn tính</div><div class="opp-desc">77% gánh nặng bệnh tật là bệnh không lây nhiễm, nhưng chỉ 14% bệnh nhân đang được quản lý liên tục. Bảng theo dõi chỉ số, nhắc nhở dùng thuốc — phân khúc có LTV cao nhất và tiềm năng mô hình gói dịch vụ theo tháng.</div></div><span class="badge b-teal">Ưu tiên cao</span></div>
+      <div class="opp-item fade-in"><div class="opp-num">03</div><div><div class="opp-title">Phân luồng thông minh trước khám</div><div class="opp-desc">Đặt lịch hiện tại chỉ là "chọn bác sĩ và giờ" — không có sàng lọc triệu chứng. Tích hợp AI đề xuất đúng chuyên khoa giúp giảm đặt lịch sai, giảm vắng không báo trước, và tăng hiệu quả vận hành nội bộ.</div></div><span class="badge b-orange">Trung hạn</span></div>
+      <div class="opp-item fade-in"><div class="opp-num">04</div><div><div class="opp-title">Làn sóng EHR bắt buộc là cơ hội thuận chiều</div><div class="opp-desc">Chính sách bắt buộc 2025–2026 đang tạo ra thói quen sử dụng dữ liệu y tế số ở cả bác sĩ lẫn bệnh nhân. Bệnh viện xây dựng sớm sẽ có lợi thế người đi trước trên nền tảng đang trở thành tiêu chuẩn bắt buộc toàn quốc.</div></div><span class="badge b-blue">Ngay bây giờ</span></div>
+      <div class="opp-item fade-in"><div class="opp-num">05</div><div><div class="opp-title">Quản lý sức khoẻ cả gia đình</div><div class="opp-desc">Người Việt thường có một người quản lý lịch khám cho cả hộ gia đình. Chưa có ứng dụng nào cho phép quản lý nhiều thành viên trong một tài khoản — đây là cơ chế thu hút người dùng mới tự nhiên, không cần chi phí quảng cáo thêm.</div></div><span class="badge b-orange">Trung hạn</span></div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<!-- SECTION 6: ROADMAP -->
+<section class="s-white" id="roadmap">
+  <div class="inner">
+    <div class="s-label">06 · Định hướng chiến lược</div>
+    <h2 class="s-head">Lộ trình sản phẩm 3 giai đoạn</h2>
+    <p class="s-desc">Chiến lược cốt lõi: Xây dựng <strong style="color:var(--blue)">"Nền tảng quan hệ bệnh nhân"</strong> — không chỉ là một ứng dụng đặt lịch. Mục tiêu là sở hữu toàn bộ hành trình trước – trong – sau điều trị trong một hệ sinh thái duy nhất.</p>
+    <div class="rm-grid">
+      <div class="rm-line"></div>
+      <div class="rm-phase rp1"><div class="rm-dot"></div><div class="rm-card fade-in"><div class="rm-head"><div class="rm-period">Giai đoạn 1 · 3–6 tháng đầu</div><div class="rm-title">Xây nền tảng</div></div><div class="rm-body"><div class="rm-feat"><div class="rm-fdot"></div>Ưu tiên Web App (PWA) hoặc Zalo Mini App</div><div class="rm-feat"><div class="rm-fdot"></div>Đặt lịch trực tuyến + xác nhận tự động</div><div class="rm-feat"><div class="rm-fdot"></div>Hàng chờ điện tử, số thứ tự ảo</div><div class="rm-feat"><div class="rm-fdot"></div>Trả kết quả xét nghiệm qua ứng dụng</div><div class="rm-feat"><div class="rm-fdot"></div>Thanh toán điện tử không tiền mặt</div></div><div class="rm-kpi"><div class="rm-kpi-label">Chỉ số mục tiêu</div><div class="rm-kpi-val">Tỷ lệ đặt lịch qua kênh số đạt trên 40% sau 6 tháng</div></div></div></div>
+      <div class="rm-phase rp2"><div class="rm-dot"></div><div class="rm-card fade-in"><div class="rm-head"><div class="rm-period">Giai đoạn 2 · 6–12 tháng</div><div class="rm-title">Tăng gắn kết</div></div><div class="rm-body"><div class="rm-feat"><div class="rm-fdot"></div>Nhắc nhở uống thuốc và lịch tái khám tự động</div><div class="rm-feat"><div class="rm-fdot"></div>Hồ sơ y tế cá nhân hoá theo lịch sử điều trị</div><div class="rm-feat"><div class="rm-fdot"></div>Tư vấn từ xa (theo Thông tư 30/2023)</div><div class="rm-feat"><div class="rm-fdot"></div>Nhắn tin với bác sĩ sau khám</div><div class="rm-feat"><div class="rm-fdot"></div>Minh bạch chi phí trước khi đặt lịch</div></div><div class="rm-kpi"><div class="rm-kpi-label">Chỉ số mục tiêu</div><div class="rm-kpi-val">Tỷ lệ người dùng hoạt động sau 30 ngày kể từ lần khám đầu</div></div></div></div>
+      <div class="rm-phase rp3"><div class="rm-dot"></div><div class="rm-card fade-in"><div class="rm-head"><div class="rm-period">Giai đoạn 3 · 12–24 tháng</div><div class="rm-title">Hệ sinh thái gắn bó</div></div><div class="rm-body"><div class="rm-feat"><div class="rm-fdot"></div>Bảng theo dõi bệnh mãn tính (đường huyết, huyết áp)</div><div class="rm-feat"><div class="rm-fdot"></div>Quản lý sức khoẻ cả hộ gia đình</div><div class="rm-feat"><div class="rm-fdot"></div>Sàng lọc triệu chứng AI trước đặt lịch</div><div class="rm-feat"><div class="rm-fdot"></div>Nội dung phòng bệnh — tạo thói quen hàng ngày</div><div class="rm-feat"><div class="rm-fdot"></div>Gói theo dõi sức khoẻ theo tháng</div></div><div class="rm-kpi"><div class="rm-kpi-label">Chỉ số mục tiêu</div><div class="rm-kpi-val">Số người dùng hoạt động hàng tháng (MAU) / tổng bệnh nhân hiện có</div></div></div></div>
+    </div>
+  </div>
+</section>
+<hr>
+<section class="s-warm">
+  <div class="inner-sm" style="padding-top:48px;padding-bottom:56px">
+    <div style="font-size:14px;font-weight:600;color:var(--near-black);margin-bottom:4px">3 nguyên tắc thiết kế không được bỏ qua</div>
+    <div style="font-size:14px;color:var(--gray-500);margin-bottom:28px">Những yếu tố quyết định sự khác biệt trong trải nghiệm người dùng tại thị trường Việt Nam</div>
+    <div class="principle-grid">
+      <div class="p-card fade-in"><div class="p-icon">📶</div><div class="p-title">Thiết kế ưu tiên mạng yếu</div><div class="p-desc">Bệnh nhân phải xem được kết quả xét nghiệm và đơn thuốc ngay cả khi kết nối mạng không ổn định. Offline-first là yêu cầu bắt buộc ở thị trường Việt Nam, không phải tuỳ chọn.</div></div>
+      <div class="p-card fade-in"><div class="p-icon">👴</div><div class="p-title">Thân thiện với người cao tuổi</div><div class="p-desc">Chữ đủ lớn, luồng thao tác đơn giản, không yêu cầu thành thạo công nghệ cao. Nhóm bệnh nhân mãn tính (40–65 tuổi) phải dùng được ngay lần đầu mà không cần hướng dẫn.</div></div>
+      <div class="p-card fade-in"><div class="p-icon">🔒</div><div class="p-title">Tín hiệu tin tưởng xuyên suốt</div><div class="p-desc">Hiển thị rõ ràng ai có thể xem dữ liệu, bệnh nhân có thể xoá dữ liệu không, và dữ liệu được lưu ở đâu. Đây là điều kiện tiên quyết để bệnh nhân tiếp tục sử dụng.</div></div>
+    </div>
+  </div>
+</section>
+<hr>
+<!-- GLOSSARY SECTION -->
+<section class="glossary-section" id="glossary">
+  <div class="inner">
+    <div class="s-label">Phụ lục · Thuật ngữ</div>
+    <h2 class="s-head">Bảng chú thích thuật ngữ</h2>
+    <p class="s-desc">Tổng hợp toàn bộ viết tắt và khái niệm chuyên ngành được sử dụng trong báo cáo này.</p>
+    <div class="glossary-grid">
+      <div class="glossary-item"><div class="glossary-abbr">CAGR</div><div class="glossary-name">Compound Annual Growth Rate</div><div class="glossary-def">Tốc độ tăng trưởng kép hàng năm. Đo mức tăng trưởng trung bình qua nhiều năm theo công thức lãi kép.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">LTV</div><div class="glossary-name">Lifetime Value</div><div class="glossary-def">Giá trị vòng đời khách hàng. Tổng doanh thu ước tính từ một bệnh nhân trong toàn bộ thời gian gắn bó — bao gồm tái khám, xét nghiệm, điều trị.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">MAU</div><div class="glossary-name">Monthly Active Users</div><div class="glossary-def">Số người dùng hoạt động hàng tháng — đo lường có bao nhiêu người thực sự mở và dùng ứng dụng trong 30 ngày.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">KPI</div><div class="glossary-name">Key Performance Indicator</div><div class="glossary-def">Chỉ số hiệu suất cốt lõi. Các mục tiêu đo lường cụ thể để đánh giá mức độ thành công của sản phẩm hoặc chiến lược.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">HIS</div><div class="glossary-name">Hospital Information System</div><div class="glossary-def">Hệ thống thông tin bệnh viện. Phần mềm quản lý toàn bộ vận hành nội bộ: đặt lịch, khoa phòng, viện phí, nhân sự, báo cáo.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">EMR</div><div class="glossary-name">Electronic Medical Record</div><div class="glossary-def">Hồ sơ bệnh án điện tử. Lưu thông tin khám chữa bệnh trong nội bộ một cơ sở y tế cụ thể.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">EHR</div><div class="glossary-name">Electronic Health Record</div><div class="glossary-def">Hồ sơ sức khoẻ điện tử. Mở rộng hơn EMR — lưu toàn bộ lịch sử sức khoẻ từ nhiều cơ sở, có thể liên thông. Bắt buộc triển khai toàn quốc 2025–2026.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">mHealth</div><div class="glossary-name">Mobile Health</div><div class="glossary-def">Y tế di động. Toàn bộ ứng dụng và dịch vụ y tế triển khai trên thiết bị di động — đặt lịch, theo dõi sức khoẻ, tư vấn từ xa.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">Telehealth</div><div class="glossary-name">Tư vấn & khám từ xa</div><div class="glossary-def">Khám chữa bệnh qua công nghệ (video, tin nhắn, điện thoại). Tại Việt Nam điều chỉnh bởi Thông tư 30/2023/TT-BYT.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">AI</div><div class="glossary-name">Artificial Intelligence</div><div class="glossary-def">Trí tuệ nhân tạo. Trong báo cáo chỉ: sàng lọc triệu chứng tự động, gợi ý chuyên khoa, hỗ trợ đọc hình ảnh chẩn đoán.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">UX</div><div class="glossary-name">User Experience</div><div class="glossary-def">Trải nghiệm người dùng. Toàn bộ cảm nhận khi tương tác với ứng dụng — luồng thao tác, bố cục, tốc độ phản hồi.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">API</div><div class="glossary-name">Application Programming Interface</div><div class="glossary-def">Cầu nối kỹ thuật cho phép hai hệ thống trao đổi dữ liệu — ví dụ ứng dụng bệnh nhân lấy kết quả xét nghiệm từ HIS.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">PWA</div><div class="glossary-name">Progressive Web App</div><div class="glossary-def">Ứng dụng web tiến bộ. Trang web hoạt động gần giống app native — cài lên màn hình chính, offline một phần, không cần qua App Store.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">SaaS</div><div class="glossary-name">Software as a Service</div><div class="glossary-def">Phần mềm dưới dạng dịch vụ. Thuê phần mềm theo tháng/năm thay vì mua đứt — ví dụ thuê nền tảng HIS từ nhà cung cấp.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">NCD</div><div class="glossary-name">Non-Communicable Disease</div><div class="glossary-def">Bệnh không lây nhiễm. Tim mạch, tiểu đường, tăng huyết áp, ung thư — chiếm 77% tổng số ca tử vong và thương tật tại Việt Nam.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">B2C / B2B</div><div class="glossary-name">Business to Consumer / Business</div><div class="glossary-def">B2C: hướng đến người dùng cuối (bệnh nhân). B2B: giữa doanh nghiệp với nhau — nhà cung cấp HIS/EMR bán cho bệnh viện.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">JCI</div><div class="glossary-name">Joint Commission International</div><div class="glossary-def">Tiêu chuẩn vàng về chất lượng bệnh viện quốc tế. Vinmec là đơn vị đầu tiên tại Việt Nam đạt chứng nhận này.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">VNeID</div><div class="glossary-name">Ứng dụng định danh điện tử quốc gia</div><div class="glossary-def">Do Bộ Công an phát triển. Từ cuối 2024 tích hợp hồ sơ sức khoẻ điện tử gắn với căn cước công dân.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">Series A</div><div class="glossary-name">Vòng gọi vốn Series A</div><div class="glossary-def">Vòng đầu tư mạo hiểm chính thức đầu tiên sau giai đoạn khởi động. Thường vài triệu đến vài chục triệu USD.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">Retention</div><div class="glossary-name">Tỷ lệ giữ chân người dùng</div><div class="glossary-def">Đo lường % người dùng quay lại sau một khoảng thời gian nhất định (7 ngày, 30 ngày...) kể từ lần đầu đăng ký.</div></div>
+      <div class="glossary-item"><div class="glossary-abbr">Triage</div><div class="glossary-name">Phân loại & phân luồng bệnh nhân</div><div class="glossary-def">Sàng lọc triệu chứng để tự động gợi ý khám chuyên khoa phù hợp — giảm đặt lịch sai và thời gian chờ đợi.</div></div>
+    </div>
+  </div>
+</section>
+<hr>
+
+<footer>
+  <p><strong>HealthHub Market Analysis Report</strong> · Dữ liệu tham chiếu: 2025 – Quý 1/2026</p>
+  <p>Nguồn: IMARC Group · Statista · Vietnam Healthcare Summit 2025 · Hospital Management Asia · Ken Research · Tracxn · ResearchGate · Vietcetera</p>
+</footer>
+
+<!-- TOOLTIP ELEMENT -->
+<div class="tooltip-box" id="global-tooltip"><strong id="tt-term"></strong><span id="tt-def"></span></div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 55); io.unobserve(e.target); }
+  });
+}, { threshold: 0.07 });
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+const barObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.cagr-fill').forEach(bar => { setTimeout(() => bar.style.width = bar.dataset.w + '%', 250); });
+      barObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.cagr-wrap').forEach(el => barObs.observe(el));
+window.addEventListener('scroll', () => {
+  let cur = '';
+  document.querySelectorAll('section[id]').forEach(s => { if (window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+}, { passive: true });
+
+// ── TOOLTIP GLOSSARY ──────────────────────────────────────────────
+const GLOSSARY = {
+  'CAGR':        { name: 'Compound Annual Growth Rate', def: 'Tốc độ tăng trưởng kép hàng năm — trung bình qua nhiều năm, tính theo lãi kép.' },
+  'LTV':         { name: 'Lifetime Value', def: 'Giá trị vòng đời khách hàng — tổng doanh thu ước tính từ một bệnh nhân trong toàn bộ thời gian gắn bó.' },
+  'MAU':         { name: 'Monthly Active Users', def: 'Số người dùng thực sự mở và dùng ứng dụng trong vòng 30 ngày.' },
+  'KPI':         { name: 'Key Performance Indicator', def: 'Chỉ số hiệu suất cốt lõi — mục tiêu đo lường mức độ thành công của sản phẩm.' },
+  'HIS':         { name: 'Hospital Information System', def: 'Phần mềm quản lý toàn bộ vận hành nội bộ bệnh viện: lịch khám, viện phí, nhân sự.' },
+  'EMR':         { name: 'Electronic Medical Record', def: 'Hồ sơ bệnh án điện tử trong nội bộ một cơ sở y tế cụ thể.' },
+  'EHR':         { name: 'Electronic Health Record', def: 'Hồ sơ sức khoẻ điện tử liên thông nhiều cơ sở. Bắt buộc triển khai toàn quốc 2025–2026.' },
+  'mHealth':     { name: 'Mobile Health', def: 'Y tế di động — toàn bộ ứng dụng y tế trên điện thoại: đặt lịch, theo dõi, tư vấn từ xa.' },
+  'Telehealth':  { name: 'Tư vấn & khám từ xa', def: 'Khám chữa bệnh qua video/tin nhắn/điện thoại. Điều chỉnh bởi Thông tư 30/2023/TT-BYT.' },
+  'Telemedicine':{ name: 'Chẩn đoán & điều trị từ xa', def: 'Phần cụ thể của Telehealth — chỉ hoạt động chẩn đoán và điều trị qua công nghệ.' },
+  'AI':          { name: 'Artificial Intelligence', def: 'Trí tuệ nhân tạo — sàng lọc triệu chứng, gợi ý chuyên khoa, hỗ trợ đọc hình ảnh chẩn đoán.' },
+  'UX':          { name: 'User Experience', def: 'Trải nghiệm người dùng — cảm nhận khi tương tác: luồng thao tác, bố cục, tốc độ phản hồi.' },
+  'API':         { name: 'Application Programming Interface', def: 'Cầu nối kỹ thuật để hai hệ thống trao đổi dữ liệu — ví dụ app bệnh nhân lấy kết quả từ HIS.' },
+  'PWA':         { name: 'Progressive Web App', def: 'Web hoạt động gần như app native — cài màn hình chính, dùng được offline, không cần qua App Store.' },
+  'SaaS':        { name: 'Software as a Service', def: 'Thuê phần mềm theo tháng/năm thay vì mua đứt và tự cài đặt.' },
+  'NCD':         { name: 'Non-Communicable Disease', def: 'Bệnh không lây nhiễm (tim mạch, tiểu đường, ung thư...) — chiếm 77% gánh nặng bệnh tật Việt Nam.' },
+  'B2C':         { name: 'Business to Consumer', def: 'Mô hình hướng đến người tiêu dùng cuối — ứng dụng phục vụ trực tiếp bệnh nhân.' },
+  'B2B':         { name: 'Business to Business', def: 'Mô hình giữa doanh nghiệp — nhà cung cấp HIS/EMR bán giải pháp cho bệnh viện.' },
+  'JCI':         { name: 'Joint Commission International', def: 'Tiêu chuẩn vàng chất lượng bệnh viện quốc tế. Vinmec là đơn vị đầu tiên tại Việt Nam đạt chuẩn.' },
+  'VNeID':       { name: 'Định danh điện tử quốc gia', def: 'Ứng dụng Bộ Công an. Từ cuối 2024 tích hợp hồ sơ sức khoẻ điện tử gắn căn cước công dân.' },
+  'Series A':    { name: 'Vòng gọi vốn Series A', def: 'Vòng đầu tư mạo hiểm chính thức đầu tiên — thường vài triệu đến vài chục triệu USD.' },
+  'Retention':   { name: 'Tỷ lệ giữ chân người dùng', def: '% người dùng quay lại sau 7 hoặc 30 ngày kể từ lần đầu đăng ký.' },
+  'Triage':      { name: 'Phân loại & phân luồng', def: 'Sàng lọc triệu chứng để gợi ý đúng chuyên khoa — giảm đặt lịch sai và thời gian chờ.' },
+  'Pain point':  { name: 'Điểm đau của người dùng', def: 'Vấn đề hoặc bất tiện mà người dùng đang gặp phải — cơ sở để thiết kế tính năng.' },
+  'Offline-first':{ name: 'Ưu tiên hoạt động offline', def: 'Thiết kế ứng dụng hoạt động được khi không có mạng — quan trọng ở thị trường Việt Nam.' },
+  'Benchmark':   { name: 'Chuẩn mực so sánh', def: 'Tiêu chuẩn tham chiếu dùng để đo lường và so sánh hiệu suất với đối thủ cạnh tranh.' },
+};
+
+// Build term regex (sort by length desc to match longer terms first)
+const terms = Object.keys(GLOSSARY).sort((a,b) => b.length - a.length);
+const escapedTerms = terms.map(t => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+const termRegex = new RegExp(`\\b(${escapedTerms.join('|')})\\b`, 'g');
+
+function wrapTermsInNode(node) {
+  if (node.nodeType === Node.TEXT_NODE) {
+    const text = node.textContent;
+    if (!termRegex.test(text)) return;
+    termRegex.lastIndex = 0;
+    const frag = document.createDocumentFragment();
+    let last = 0, m;
+    while ((m = termRegex.exec(text)) !== null) {
+      if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+      const span = document.createElement('span');
+      span.className = 'term';
+      span.textContent = m[0];
+      span.dataset.term = m[0];
+      frag.appendChild(span);
+      last = m.index + m[0].length;
+    }
+    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    node.parentNode.replaceChild(frag, node);
+  } else if (
+    node.nodeType === Node.ELEMENT_NODE &&
+    !['SCRIPT','STYLE','A','BUTTON','INPUT','TEXTAREA','CODE','PRE'].includes(node.tagName) &&
+    !node.classList.contains('term') &&
+    !node.classList.contains('glossary-item') &&
+    !node.classList.contains('nav-logo')
+  ) {
+    Array.from(node.childNodes).forEach(wrapTermsInNode);
+  }
+}
+wrapTermsInNode(document.body);
+
+// Tooltip show/hide
+const tooltip = document.getElementById('global-tooltip');
+const ttTerm  = document.getElementById('tt-term');
+const ttDef   = document.getElementById('tt-def');
+let activeEl  = null;
+
+document.addEventListener('mouseover', e => {
+  const el = e.target.closest('.term');
+  if (!el) return;
+  const key = Object.keys(GLOSSARY).find(k => k.toLowerCase() === el.dataset.term.toLowerCase());
+  if (!key) return;
+  activeEl = el;
+  ttTerm.textContent = key;
+  ttDef.textContent  = GLOSSARY[key].def;
+  tooltip.classList.add('visible');
+  positionTooltip(e);
+});
+document.addEventListener('mousemove', e => {
+  if (!tooltip.classList.contains('visible')) return;
+  positionTooltip(e);
+});
+document.addEventListener('mouseout', e => {
+  if (!e.target.closest('.term')) { tooltip.classList.remove('visible'); activeEl = null; }
+});
+
+function positionTooltip(e) {
+  const pad = 14, tw = tooltip.offsetWidth || 280, th = tooltip.offsetHeight || 80;
+  let x = e.clientX + pad, y = e.clientY + pad;
+  if (x + tw > window.innerWidth  - 10) x = e.clientX - tw - pad;
+  if (y + th > window.innerHeight - 10) y = e.clientY - th - pad;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top  = y + 'px';
+}
+</script>
+</body>
+</html>
